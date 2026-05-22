@@ -1,0 +1,431 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/');
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    font-weight: 200;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.main-page {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 92px;
+    margin-right: 92px;
+    margin-top: 15px;
+
+
+}
+
+
+button,
+input {
+    font-family: 'Poppins';
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 1);
+    height: 72px;
+    border-bottom: 1px solid rgba(212, 215, 229, 1);
+}
+
+.header-text {
+    width: 184px;
+    margin-left: 91.98px;
+    font-size: 24px;
+    color: rgba(63, 66, 85, 1);
+    font-weight: 600;
+}
+
+.header-text span {
+    position: relative;
+    z-index: 1;
+}
+
+.header-text span::before {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 42%;
+    background-color: rgba(255, 225, 69, 1);
+    z-index: -1;
+}
+
+header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+header button:hover {
+    background-color: rgba(242, 244, 250, 1);
+}
+
+.menu {
+    display: flex;
+    height: 48px;
+    width: 257px;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 92px;
+}
+
+.login text {
+    font-size: 16px;
+    color: rgba(144, 147, 166, 1);
+}
+
+#count {
+    color: rgba(144, 147, 166, 1);
+    font-size: 16px;
+}
+
+#burger-checkbox {
+    display: none;
+}
+
+.burger {
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 101;
+}
+
+.burger:hover {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.burger::before,
+.burger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: #9093A6;
+}
+
+.burger::before {
+    top: 17px;
+    box-shadow: 0 6px 0 #9093A6;
+    transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+}
+
+.burger::after {
+    bottom: 17px;
+    transition: bottom .3s .15s, transform .3s;
+}
+
+#burger-checkbox:checked+.burger::before {
+    top: 23px;
+    transform: rotate(45deg);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+    transition: box-shadow .15s, top .3s, transform .3s .15s;
+}
+
+#burger-checkbox:checked+.burger::after {
+    bottom: 23px;
+    transform: rotate(-45deg);
+    transition: bottom .3s, transform .3s .15s;
+}
+
+.side-menu {
+    position: fixed;
+    top: 82px;
+    right: 0;
+    width: 285px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    padding-top: 80px;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    box-shadow: -15px 0 15px -10px rgba(0, 0, 0, 0.15);
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 30px;
+}
+
+.menu-list li {
+    margin-bottom: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgba(144, 147, 166, 1);
+    font-size: 16px;
+}
+
+#burger-checkbox:checked~.side-menu {
+    transform: translateX(0);
+}
+
+.salad {
+    width: 803px;
+    height: 706px;
+}
+
+.prime {
+    justify-content: space-around;
+}
+
+.map {
+    width: 1280px;
+    height: 600px;
+    padding: 69px;
+    margin-left: 20px;
+
+}
+
+.main-text {
+    font-size: 64px;
+    color: rgba(63, 66, 85, 1);
+    width: 534px;
+}
+
+.group-buttons {
+    width: 259px;
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.delivery-but {
+    background-color: none;
+    background-color: rgba(255, 255, 255, 1);
+    border: 2px solid rgba(255, 225, 69, 1);
+    cursor: pointer;
+    border-radius: 4px;
+    width: 118px;
+
+}
+
+.take-but {
+    background-color: none;
+    background-color: rgba(255, 255, 255, 1);
+    border: 2px solid rgba(255, 225, 69, 1);
+    cursor: pointer;
+    border-radius: 4px;
+    width: 118px;
+
+}
+
+.take-but:hover {
+    background-color: rgba(255, 247, 204, 1);
+}
+
+.delivery-but:hover {
+    background-color: rgba(255, 247, 204, 1);
+}
+
+.delivery-but p {
+    color: rgba(63, 66, 85, 1);
+    line-height: 0.5px;
+}
+
+.take-but p {
+    color: rgba(63, 66, 85, 1);
+    line-height: 0.5px;
+}
+
+.takeout {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(63, 66, 85, 1);
+}
+
+.delivery {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(63, 66, 85, 1);
+
+}
+
+.up-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.Block-restaurants p {
+    font-size: 36px;
+}
+
+.but-show {
+    font-size: 16px;
+    width: 118px;
+    background-color: none;
+    background-color: rgba(242, 244, 250, 1);
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    height: 48px;
+    color: rgba(144, 147, 166, 1);
+}
+
+.but-show:hover {
+    background-color: rgba(212, 215, 229, 1);
+    color: rgba(63, 66, 85, 1);
+}
+
+.pop {}
+
+.page-title {
+    text-align: center;
+}
+
+.slider-container {
+    position: relative;
+    width: 1256px;
+    height: 296px;
+    overflow: hidden;
+}
+
+.Block-restaurants {
+    margin-left: 92px;
+    margin-right: 92px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    width: 25%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 3px;
+}
+
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 50%;
+    color: rgba(144, 147, 166, 1);
+    cursor: pointer;
+}
+
+.prev-button {
+    left: 5px;
+    box-shadow: -5px 0 5px -1px rgba(0, 0, 0, 0.15);
+
+}
+
+.next-button {
+    right: 5px;
+    box-shadow: 5px -0px 5px -1px rgba(0, 0, 0, 0.15);
+}
+
+.find-rest {
+    margin-top: 72px;
+    height: 297px;
+    background-color: rgba(242, 244, 250, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.find-rest h2 {
+    font-weight: 100;
+    font-size: 36px;
+    margin-left: 172px;
+}
+
+.find-rest p {
+    width: 420px;
+    font-size: 16px;
+    margin-left: 172px;
+}
+
+.address-input {
+    padding: 0px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    height: 72px;
+
+}
+
+.send {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: rgba(255, 225, 69, 1);
+    color: rgba(183, 156, 16, 1);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 172px;
+    height: 72px;
+}
+
+.send:hover {
+    background-color: rgba(255, 247, 204, 1);
+}
+
+
+.lemons {
+    width: 100%;
+}
+
+.block-insta {
+    margin-left: 92px;
+    justify-content: space-between;
+    margin-right: 92px;
+    margin-top: 70px;
+}
+
+.block-insta p {
+    font-size: 36px;
+    font-weight: 100;
+    color: rgba(49, 48, 48, 1);
+}
+
+.photo {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.photos {
+    height: 299px;
+    width: 296px;
+}
+
+.specialities {
+    width: 136px;
+    height: 136px;
+}
