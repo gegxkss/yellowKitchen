@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Poppins';
-    src: url('../fonts/');
+    src: url('../fonts/Poppins-Regular.ttf');
 }
 
 body {
@@ -10,16 +10,21 @@ body {
     font-family: 'Poppins';
     font-weight: 200;
     background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    vertical-align: center;
 }
 
 .main-page {
     display: flex;
-    justify-content: space-between;
-    margin-left: 92px;
-    margin-right: 92px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin-top: 15px;
-
-
+    width: calc(100% - 184px);
+    max-width: 100%;
 }
 
 
@@ -169,10 +174,10 @@ header button:hover {
     list-style: none;
     padding: 0;
     margin: 0 30px;
-}
 
-.menu-list li {
-    margin-bottom: 20px;
+    > li {
+        margin-bottom: 20px;
+    }
 }
 
 .menu a {
@@ -186,12 +191,16 @@ header button:hover {
 }
 
 .salad {
+    background-image: url('./fonts/images/salad.png');
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 803px;
     height: 706px;
+    border: none;
 }
 
 .prime {
-    justify-content: space-around;
+    width: auto;
 }
 
 .map {
@@ -216,8 +225,7 @@ header button:hover {
 }
 
 .delivery-but {
-    background-color: none;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: transparent;
     border: 2px solid rgba(255, 225, 69, 1);
     cursor: pointer;
     border-radius: 4px;
@@ -226,13 +234,11 @@ header button:hover {
 }
 
 .take-but {
-    background-color: none;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: transparent;
     border: 2px solid rgba(255, 225, 69, 1);
     cursor: pointer;
     border-radius: 4px;
     width: 118px;
-
 }
 
 .take-but:hover {
