@@ -1,30 +1,33 @@
-const slider = document.querySelector('.slider');
-const prevButton = document.querySelector('.prev-button');
-const nextButton = document.querySelector('.next-button');
-const slides = Array.from(slider.querySelectorAll('img'));
-const slideCount = slides.length;
+const restaurantSlider = document.querySelector('.slider');
+const restPrevButton = document.querySelector('.prev-button');
+const restNextButton = document.querySelector('.next-button');
 
-let slideIndex = 0;
-const slidesToShow = 4;
+if (restaurantSlider && restPrevButton && restNextButton) {
+    const restaurantSlides = Array.from(restaurantSlider.querySelectorAll('img'));
+    const restSlideCount = restaurantSlides.length;
 
-prevButton.addEventListener('click', showPreviousSlide);
-nextButton.addEventListener('click', showNextSlide);
+    let restSlideIndex = 0;
+    const restSlidesToShow = 4;
 
-function showPreviousSlide() {
-    if (slideCount <= slidesToShow) return;
-    slideIndex = (slideIndex - 1 + (slideCount - slidesToShow + 1)) % (slideCount - slidesToShow + 1);
-    updateSlider();
+    restPrevButton.addEventListener('click', showRestPrevious);
+    restNextButton.addEventListener('click', showRestNext);
+
+    function showRestPrevious() {
+        if (restSlideCount <= restSlidesToShow) return;
+        restSlideIndex = (restSlideIndex - 1 + (restSlideCount - restSlidesToShow + 1)) % (restSlideCount - restSlidesToShow + 1);
+        updateRestSlider();
+    }
+
+    function showRestNext() {
+        if (restSlideCount <= restSlidesToShow) return;
+        restSlideIndex = (restSlideIndex + 1) % (restSlideCount - restSlidesToShow + 1);
+        updateRestSlider();
+    }
+
+    function updateRestSlider() {
+        const step = 100 / restSlidesToShow;
+        restaurantSlider.style.transform = `translateX(-${restSlideIndex * step}%)`;
+    }
+
+    updateRestSlider();
 }
-
-function showNextSlide() {
-    if (slideCount <= slidesToShow) return;
-    slideIndex = (slideIndex + 1) % (slideCount - slidesToShow + 1);
-    updateSlider();
-}
-
-function updateSlider() {
-    const step = 100 / slidesToShow;
-    slider.style.transform = `translateX(-${slideIndex * step}%)`;
-}
-
-updateSlider();
